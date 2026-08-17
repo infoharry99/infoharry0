@@ -15,6 +15,7 @@ import WhyChooseMeSection from '../components/WhyChooseMeSection';
 import TestimonialsSlider from '../components/TestimonialsSlider';
 import TimelineSection from '../components/TimelineSection';
 import FaqSection from '../components/FaqSection';
+import SeoKeywordsSection from '../components/SeoKeywordsSection';
 import ClientCtaSection from '../components/ClientCtaSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
@@ -97,6 +98,9 @@ export default function Home() {
 
       {/* Frequently Asked Questions (SEO, GEO, AEO & LLM Search Optimized) */}
       <FaqSection />
+
+      {/* Specialized SEO & AI Search Ranking Keywords Index */}
+      <SeoKeywordsSection />
 
       {/* Client CTA Banner */}
       <ClientCtaSection onOpenConsultation={() => handleOpenConsultation()} />

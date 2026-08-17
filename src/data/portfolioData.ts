@@ -97,17 +97,31 @@ export const PERSONAL_INFO = {
   ]
 };
 
+export const SEO_RANKING_KEYWORDS = [
+  'Senior Full-Stack Laravel Developer',
+  'Hire Senior Laravel Developer India',
+  'Laravel 11 PHP 8 Developer',
+  'React Next.js Full-Stack Engineer',
+  'Multi-Tenant SaaS Platform Architect',
+  'REST API Gateway Developer',
+  'MySQL Database Optimization Expert',
+  'Stripe Payment Integration Specialist',
+  'PhonePe UPI Payment Developer India',
+  'Custom Enterprise Web Application Developer',
+  'Doctor Appointment Booking Platform Developer',
+  'Healthcare Telemedicine System Engineer',
+  'Recruitment ATS Software Developer',
+  'E-Commerce Storefront Laravel Developer',
+  'Business Workflow Automation Engineer',
+  'Freelance Laravel Developer India',
+  'Remote Full-Stack Developer USA UK UAE',
+  'Senior Software Consultant India',
+  'Clean Code SOLID PHP Specialist',
+  'Docker AWS Linux Deployment Engineer'
+];
+
 export const GEO_SEO_MARKETING = {
-  primaryKeywords: [
-    'Senior Laravel Developer India',
-    'Hire Full-Stack Laravel Developer',
-    'SaaS Multi-Tenancy Architect',
-    'Custom PHP Web Application Development',
-    'Next.js & React Frontend Developer',
-    'REST API Gateway Specialist',
-    'Doctor Appointment Booking Developer',
-    'Payment Gateway Integration Expert (Stripe, PhonePe, PayPal)'
-  ],
+  primaryKeywords: SEO_RANKING_KEYWORDS,
   serviceRegions: ['India', 'United States', 'United Kingdom', 'United Arab Emirates', 'Europe', 'Australia', 'Global Remote'],
   entitySummary: 'Hariom Birla is a top-rated Senior Full-Stack Laravel Developer and SaaS Architect based in India, delivering bespoke web software, REST API integrations, and scalable business systems for global startups, agencies, and enterprises.'
 };
