@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { PROJECTS, Project } from '../data/portfolioData';
 import { ChevronLeft, ChevronRight, CheckCircle2, ArrowRight, LayoutGrid, SlidersHorizontal } from 'lucide-react';
+import ProjectMockupPreview from './ProjectMockupPreview';
 
 interface ProjectsSliderProps {
   onOpenCaseStudy: (project: Project) => void;
@@ -99,7 +100,7 @@ export default function ProjectsSlider({ onOpenCaseStudy }: ProjectsSliderProps)
             <div className="p-8 md:p-10 rounded-3xl overflow-hidden border border-sky-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 shadow-lg">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 
-                {/* Left Side: Mockup Window */}
+                {/* Left Side: Mockup Window with Rich Application Screen Composition */}
                 <div className="lg:col-span-6">
                   <div className="rounded-2xl border border-sky-200 dark:border-slate-700/80 bg-slate-950 overflow-hidden shadow-xl">
                     {/* Browser Chrome Header */}
@@ -112,29 +113,13 @@ export default function ProjectsSlider({ onOpenCaseStudy }: ProjectsSliderProps)
                           https://app.{currentProject.id}.com
                         </span>
                       </div>
-                      <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-sky-950 text-sky-300 border border-sky-800/50">
+                      <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-sky-950 text-sky-300 border border-sky-800/50 font-semibold">
                         {currentProject.category}
                       </span>
                     </div>
 
-                    {/* Realistic UI Screen Mockup */}
-                    <div className={`p-6 min-h-[300px] bg-gradient-to-br ${currentProject.imageBg} flex flex-col justify-between relative`}>
-                      <div className="flex justify-between items-start">
-                        <div className="px-3 py-1 rounded-full bg-slate-950/80 border border-white/10 backdrop-blur-md text-xs font-bold text-white">
-                          {currentProject.subtitle}
-                        </div>
-                      </div>
-
-                      {/* Mockup Metrics Cards */}
-                      <div className="grid grid-cols-3 gap-2 mt-12">
-                        {currentProject.metrics.map((m, idx) => (
-                          <div key={idx} className="p-3 rounded-xl bg-slate-950/90 border border-white/10 backdrop-blur-md">
-                            <div className="text-sm font-extrabold text-white">{m.value}</div>
-                            <div className="text-[10px] text-slate-300 leading-tight mt-0.5">{m.label}</div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                    {/* Rich Application UI Mockup Component */}
+                    <ProjectMockupPreview project={currentProject} />
                   </div>
                 </div>
 
@@ -246,7 +231,7 @@ export default function ProjectsSlider({ onOpenCaseStudy }: ProjectsSliderProps)
                     {project.title}
                   </h3>
 
-                  <p className="text-xs text-slate-600 dark:text-slate-400 mb-4 line-clamp-2">
+                  <p className="text-xs text-slate-600 dark:text-slate-400 mb-4 line-clamp-2 font-normal">
                     {project.description}
                   </p>
 
