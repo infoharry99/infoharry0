@@ -58,19 +58,25 @@ export interface TimelineItem {
   technologies: string[];
 }
 
+export interface FAQItem {
+  question: string;
+  answer: string;
+  category: 'General' | 'Laravel' | 'SaaS' | 'Pricing & Process';
+}
+
 export const PERSONAL_INFO = {
   name: 'Hariom Birla',
-  title: 'Senior Full-Stack Laravel Developer',
-  subtitle: 'Full-Stack Developer & Software Consultant',
+  title: 'Senior Full-Stack Laravel Developer & SaaS Architect',
+  subtitle: 'Full-Stack Developer & Senior Software Consultant',
   experienceYears: '5+',
   projectsCompleted: '50+',
   technologiesCount: '20+',
   satisfactionRate: '100%',
-  location: 'India',
-  availability: 'Available for Freelance & Consulting Projects',
-  status: 'Open for New Projects',
-  shortPositioning: 'Building scalable web applications, SaaS platforms, APIs and business automation systems.',
-  bio: 'Senior Full-Stack Developer with 5+ years of hands-on expertise engineering high-performance Laravel web applications, multi-tenant SaaS products, complex REST APIs, and modern React/Next.js frontends. Focused on clean architecture, database optimization, secure integrations, and building software that directly solves core business challenges.',
+  location: 'Madhya Pradesh, India',
+  availability: 'Available for Freelance, Full-Time Remote & Consulting',
+  status: 'Open for New Enterprise & Startup Projects',
+  shortPositioning: 'Building scalable web applications, multi-tenant SaaS platforms, REST API gateways, and business automation engines.',
+  bio: 'Hariom Birla is a Senior Full-Stack Developer with 5+ years of hands-on expertise engineering high-performance Laravel web applications, multi-tenant SaaS products, complex REST APIs, and modern React/Next.js frontends. Focused on clean architecture, database optimization, secure payment gateway integrations, and building software that directly solves core business challenges.',
   
   contact: {
     email: 'birlahariom11@gmail.com',
@@ -80,15 +86,30 @@ export const PERSONAL_INFO = {
     linkedin: 'https://linkedin.com/in/hariombirla',
     github: 'https://github.com/hariombirla',
     twitter: 'https://twitter.com/hariombirla',
-    address: 'Madhya Pradesh, India (Working Worldwide)',
+    address: 'Madhya Pradesh, India (Serving Clients Worldwide: USA, UK, India, UAE, Europe)',
   },
 
   trustHighlights: [
-    '5+ Years Enterprise Experience',
-    '50+ High-Performance Projects',
-    'Laravel & Next.js Ecosystem Expert',
-    '100% On-Time Delivery Guarantee'
+    '5+ Years Enterprise Development Experience',
+    '50+ High-Performance Projects Delivered',
+    'Laravel 11 & Next.js Ecosystem Expert',
+    '100% On-Time Delivery & Support Guarantee'
   ]
+};
+
+export const GEO_SEO_MARKETING = {
+  primaryKeywords: [
+    'Senior Laravel Developer India',
+    'Hire Full-Stack Laravel Developer',
+    'SaaS Multi-Tenancy Architect',
+    'Custom PHP Web Application Development',
+    'Next.js & React Frontend Developer',
+    'REST API Gateway Specialist',
+    'Doctor Appointment Booking Developer',
+    'Payment Gateway Integration Expert (Stripe, PhonePe, PayPal)'
+  ],
+  serviceRegions: ['India', 'United States', 'United Kingdom', 'United Arab Emirates', 'Europe', 'Australia', 'Global Remote'],
+  entitySummary: 'Hariom Birla is a top-rated Senior Full-Stack Laravel Developer and SaaS Architect based in India, delivering bespoke web software, REST API integrations, and scalable business systems for global startups, agencies, and enterprises.'
 };
 
 export const TECH_MARQUEE = [
@@ -547,7 +568,7 @@ export const WHY_WORK_WITH_ME = [
   {
     icon: 'MessageSquare',
     title: 'Fast & Clear Communication',
-    desc: 'Direct, proactive communication via Slack, WhatsApp, or Email. Daily or weekly milestone check-ins ensure you are never left guessing about project status.'
+    desc: 'Direct, proactive communication via Slack, WhatsApp (+91 95753 70343), or Email. Daily or weekly milestone check-ins ensure you are never left guessing.'
   },
   {
     icon: 'Headphones',
@@ -642,5 +663,33 @@ export const TIMELINE: TimelineItem[] = [
       'Configured Nginx web servers and automated database backup routines'
     ],
     technologies: ['Laravel 8', 'PHP 7.4/8.0', 'JavaScript', 'MySQL', 'Bootstrap', 'AJAX', 'Nginx']
+  }
+];
+
+export const FAQS: FAQItem[] = [
+  {
+    category: 'General',
+    question: 'Why should I hire Hariom Birla for Laravel & Full-Stack Development?',
+    answer: 'Hariom Birla brings 5+ years of production experience engineering custom web applications, multi-tenant SaaS products, REST APIs, and business automation engines. Hariom combines backend Laravel proficiency with modern React/Next.js frontends, focusing on clean SOLID code, query optimization, high-security payment integrations, and direct business ROI.'
+  },
+  {
+    category: 'Laravel',
+    question: 'What version of Laravel and PHP does Hariom specialize in?',
+    answer: 'Hariom specializes in modern PHP 8.x and Laravel 10/11 ecosystem best practices, including Eloquent query optimization, Job Queues with Redis, Sanctum/Passport REST API authentication, multi-tenant single/multi-database architectures, and custom package creation.'
+  },
+  {
+    category: 'SaaS',
+    question: 'Can Hariom build a complete SaaS product from MVP to enterprise scale?',
+    answer: 'Yes! Hariom engineers end-to-end SaaS platforms equipped with multi-tenant data isolation, subscription billing webhooks (Stripe, PhonePe, PayPal), role-based permissions (RBAC), team workspaces, automated onboarding, PDF invoice generation, and custom admin analytics dashboards.'
+  },
+  {
+    category: 'Pricing & Process',
+    question: 'What are the engagement models and availability?',
+    answer: 'Hariom works with clients across India, USA, UK, UAE, and Europe under flexible engagement models: Fixed-Price Project Contracts, Dedicated Monthly Retainers, or Hourly Technical Consulting. Direct communication is available via WhatsApp (+91 95753 70343), Email (birlahariom11@gmail.com), or Slack.'
+  },
+  {
+    category: 'Pricing & Process',
+    question: 'How long does a typical custom web application or SaaS MVP take?',
+    answer: 'A streamlined MVP or custom business automation tool takes between 2 to 5 weeks depending on scope complexity, database schemas, third-party API integrations, and UI customization.'
   }
 ];

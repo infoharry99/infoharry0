@@ -14,6 +14,7 @@ import DevelopmentProcessSection from '../components/DevelopmentProcessSection';
 import WhyChooseMeSection from '../components/WhyChooseMeSection';
 import TestimonialsSlider from '../components/TestimonialsSlider';
 import TimelineSection from '../components/TimelineSection';
+import FaqSection from '../components/FaqSection';
 import ClientCtaSection from '../components/ClientCtaSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
@@ -29,7 +30,6 @@ export default function Home() {
   const [initialService, setInitialService] = useState<string>('Custom Web Applications');
 
   useEffect(() => {
-    // Synchronize html class with dark mode state
     if (isDark) {
       document.documentElement.classList.add('dark');
       document.documentElement.classList.remove('light');
@@ -94,6 +94,9 @@ export default function Home() {
 
       {/* 5+ Years Career Progression Timeline */}
       <TimelineSection />
+
+      {/* Frequently Asked Questions (SEO, GEO, AEO & LLM Search Optimized) */}
+      <FaqSection />
 
       {/* Client CTA Banner */}
       <ClientCtaSection onOpenConsultation={() => handleOpenConsultation()} />

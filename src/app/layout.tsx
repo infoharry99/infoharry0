@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
+import { FAQS, PERSONAL_INFO, GEO_SEO_MARKETING } from '../data/portfolioData';
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -21,23 +22,17 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Hariom Birla | Senior Full-Stack Laravel Developer',
-  description: 'Hariom Birla is a senior full-stack Laravel developer with 5+ years experience specializing in scalable web applications, SaaS platforms, APIs, business automation and modern digital products.',
-  keywords: [
-    'Hariom Birla',
-    'Laravel Developer',
-    'Senior Full-Stack Developer',
-    'PHP Developer',
-    'React Developer',
-    'Next.js Developer',
-    'SaaS Architect',
-    'REST API Expert',
-    'India Full-Stack Freelancer'
-  ],
+  title: 'Hariom Birla | Senior Full-Stack Laravel Developer & SaaS Architect',
+  description: 'Hariom Birla is a senior full-stack Laravel developer with 5+ years experience building scalable web applications, multi-tenant SaaS platforms, REST APIs, doctor booking platforms, and business automation software for clients in India, USA, UK, UAE & Europe.',
+  keywords: GEO_SEO_MARKETING.primaryKeywords,
   authors: [{ name: 'Hariom Birla' }],
   creator: 'Hariom Birla',
+  metadataBase: new URL('https://hariombirla.dev'),
+  alternates: {
+    canonical: 'https://hariombirla.dev',
+  },
   openGraph: {
-    title: 'Hariom Birla | Senior Full-Stack Laravel Developer',
+    title: 'Hariom Birla | Senior Full-Stack Laravel Developer & SaaS Architect',
     description: 'Building scalable web applications, SaaS platforms, APIs and business automation systems.',
     url: 'https://hariombirla.dev',
     siteName: 'Hariom Birla Portfolio',
@@ -46,13 +41,20 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hariom Birla | Senior Full-Stack Laravel Developer',
+    title: 'Hariom Birla | Senior Full-Stack Laravel Developer & SaaS Architect',
     description: 'Building scalable web applications, SaaS platforms, APIs and business automation systems.',
     creator: '@hariombirla',
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   }
 };
 
@@ -61,29 +63,52 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const jsonLd = {
+  // Schema.org Person & Services
+  const personJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Hariom Birla',
-    jobTitle: 'Senior Full-Stack Laravel Developer',
+    name: PERSONAL_INFO.name,
+    jobTitle: PERSONAL_INFO.title,
     url: 'https://hariombirla.dev',
+    email: PERSONAL_INFO.contact.email,
+    telephone: PERSONAL_INFO.contact.phone,
     sameAs: [
-      'https://github.com/hariombirla',
-      'https://linkedin.com/in/hariombirla',
-      'https://twitter.com/hariombirla'
+      PERSONAL_INFO.contact.github,
+      PERSONAL_INFO.contact.linkedin,
+      PERSONAL_INFO.contact.twitter
     ],
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Madhya Pradesh',
+      addressCountry: 'India'
+    },
+    areaServed: GEO_SEO_MARKETING.serviceRegions,
     knowsAbout: [
-      'Laravel',
+      'Laravel 11',
       'PHP 8',
       'React.js',
       'Next.js',
-      'MySQL',
+      'MySQL Database Optimization',
       'REST APIs',
-      'Docker',
-      'SaaS Multi-Tenancy',
-      'Payment Gateway Integration'
+      'Docker Containerization',
+      'SaaS Multi-Tenancy Architecture',
+      'Stripe & PhonePe Payment Gateways'
     ],
-    description: 'Senior Full-Stack Developer with 5+ years experience architecting web applications, SaaS platforms, and APIs.'
+    description: PERSONAL_INFO.bio
+  };
+
+  // Schema.org FAQPage for AEO / Answer Engine Optimization (ChatGPT, Perplexity, Gemini, SearchGPT)
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQS.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer
+      }
+    }))
   };
 
   return (
@@ -91,7 +116,11 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
       </head>
       <body className="font-sans bg-slate-50 text-slate-900 antialiased selection:bg-sky-500 selection:text-white">
