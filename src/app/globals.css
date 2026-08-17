@@ -2,10 +2,13 @@
 
 @layer base {
   :root {
-    --bg-primary: #f0f7ff;
-    --bg-secondary: #e0f2fe;
+    --font-sans: var(--font-plus-jakarta), var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: var(--font-mono), monospace;
+
+    --bg-primary: #f8fafc;
+    --bg-secondary: #f0f7ff;
     --card-bg: #ffffff;
-    --card-border: rgba(186, 230, 253, 0.8);
+    --card-border: #bae6fd;
     --text-primary: #0f172a;
     --text-secondary: #334155;
     --text-muted: #64748b;
@@ -18,7 +21,7 @@
   .dark {
     --bg-primary: #07090e;
     --bg-secondary: #0d111a;
-    --card-bg: rgba(15, 23, 42, 0.7);
+    --card-bg: rgba(15, 23, 42, 0.75);
     --card-border: rgba(255, 255, 255, 0.08);
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
@@ -32,14 +35,26 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
+  font-family: var(--font-sans);
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  letter-spacing: -0.02em;
+}
+
+code, pre, .font-mono {
+  font-family: var(--font-mono);
 }
 
 /* Custom Scrollbar */
@@ -53,12 +68,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(2, 132, 199, 0.3);
+  background: rgba(2, 132, 199, 0.35);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(2, 132, 199, 0.5);
+  background: rgba(2, 132, 199, 0.6);
 }
 
 /* Marquee Continuous Animation */
@@ -88,13 +103,13 @@ body {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--card-border);
   border-radius: 16px;
-  box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-card:hover {
-  border-color: rgba(2, 132, 199, 0.4);
-  box-shadow: 0 16px 40px -12px rgba(2, 132, 199, 0.18);
+  border-color: rgba(2, 132, 199, 0.45);
+  box-shadow: 0 16px 40px -12px rgba(2, 132, 199, 0.2);
 }
 
 /* Custom Hide Scrollbar Utility for Sliders */
@@ -108,7 +123,7 @@ body {
 
 /* Light Blue Grid Background Pattern */
 .bg-grid-pattern {
-  background-image: radial-gradient(rgba(14, 165, 233, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(14, 165, 233, 0.15) 1.2px, transparent 1.2px);
   background-size: 24px 24px;
 }
 

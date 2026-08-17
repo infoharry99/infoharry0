@@ -1,5 +1,24 @@
 import type { Metadata } from 'next';
+import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-plus-jakarta',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-inter',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-mono',
+});
 
 export const metadata: Metadata = {
   title: 'Hariom Birla | Senior Full-Stack Laravel Developer',
@@ -68,14 +87,14 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="light">
+    <html lang="en" className={`light ${plusJakarta.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-sky-50/50 text-slate-900 antialiased selection:bg-sky-500 selection:text-white">
+      <body className="font-sans bg-slate-50 text-slate-900 antialiased selection:bg-sky-500 selection:text-white">
         {children}
       </body>
     </html>
