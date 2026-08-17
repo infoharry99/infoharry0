@@ -2,23 +2,23 @@
 
 import React from 'react';
 import { PROBLEM_SOLVING_STEPS } from '../data/portfolioData';
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 
 export default function ProblemSolvingSection() {
   return (
-    <section className="py-24 bg-slate-950/90 border-t border-slate-800/80 relative">
+    <section className="py-24 bg-white dark:bg-slate-950/90 border-t border-sky-100 dark:border-slate-800/80 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center space-x-2 text-xs font-mono font-semibold uppercase tracking-wider text-blue-400 mb-3">
-            <span className="w-2 h-2 rounded-full bg-blue-500" />
+          <div className="inline-flex items-center space-x-2 text-xs font-mono font-bold uppercase tracking-wider text-sky-700 dark:text-blue-400 mb-3">
+            <span className="w-2 h-2 rounded-full bg-sky-500" />
             <span>Structured Engineering Method</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-            How I <span className="text-blue-400">Solve Problems</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+            How I <span className="text-sky-600 dark:text-blue-400">Solve Problems</span>
           </h2>
-          <p className="mt-3 text-sm text-slate-400 leading-relaxed">
+          <p className="mt-3 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
             A proven 4-step execution framework ensuring project success from initial discovery through long-term production scaling.
           </p>
         </div>
@@ -29,33 +29,33 @@ export default function ProblemSolvingSection() {
           {PROBLEM_SOLVING_STEPS.map((step, idx) => (
             <div
               key={step.number}
-              className="glass-card p-6 rounded-2xl bg-slate-900/60 border border-slate-800/80 flex flex-col justify-between group hover:border-blue-500/40 relative overflow-hidden"
+              className="p-6 rounded-2xl bg-white dark:bg-slate-900/60 border border-sky-200/80 dark:border-slate-800/80 flex flex-col justify-between group hover:border-sky-400 hover:shadow-md transition-all relative overflow-hidden"
             >
               <div>
                 {/* Step Number Badge */}
                 <div className="flex items-center justify-between mb-6">
-                  <span className="text-3xl font-black font-mono text-slate-800 group-hover:text-blue-500/40 transition-colors">
+                  <span className="text-3xl font-black font-mono text-sky-200 dark:text-slate-800 group-hover:text-sky-600 transition-colors">
                     {step.number}
                   </span>
-                  <span className="px-2.5 py-1 rounded-full text-[10px] font-mono bg-blue-950 text-blue-400 border border-blue-800/50">
+                  <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-sky-100 dark:bg-blue-950 text-sky-700 dark:text-blue-400 border border-sky-200 dark:border-blue-800/50">
                     Phase {idx + 1}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-white mb-1 group-hover:text-blue-400 transition-colors">
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-1 group-hover:text-sky-600 transition-colors">
                   {step.title}
                 </h3>
-                <p className="text-xs font-semibold text-blue-400 mb-3">{step.subtitle}</p>
+                <p className="text-xs font-semibold text-sky-700 dark:text-blue-400 mb-3">{step.subtitle}</p>
 
-                <p className="text-xs text-slate-400 leading-relaxed mb-6">
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
                   {step.description}
                 </p>
 
                 {/* Checklist */}
-                <div className="space-y-2 pt-4 border-t border-slate-800/80">
+                <div className="space-y-2 pt-4 border-t border-sky-100 dark:border-slate-800/80">
                   {step.details.map((detail, dIdx) => (
-                    <div key={dIdx} className="flex items-start space-x-2 text-[11px] text-slate-300">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-blue-400 shrink-0 mt-0.5" />
+                    <div key={dIdx} className="flex items-start space-x-2 text-[11px] text-slate-700 dark:text-slate-300">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-sky-600 dark:text-blue-400 shrink-0 mt-0.5" />
                       <span>{detail}</span>
                     </div>
                   ))}

@@ -23,7 +23,7 @@ import ConsultationModal from '../components/ConsultationModal';
 import { Project } from '../data/portfolioData';
 
 export default function Home() {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
   const [selectedCaseStudy, setSelectedCaseStudy] = useState<Project | null>(null);
   const [consultationOpen, setConsultationOpen] = useState(false);
   const [initialService, setInitialService] = useState<string>('Custom Web Applications');

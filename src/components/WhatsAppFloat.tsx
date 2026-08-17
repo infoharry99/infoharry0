@@ -24,8 +24,8 @@ export default function WhatsAppFloat() {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex items-center">
       {showTooltip && (
-        <div className="mr-3 px-3.5 py-2 bg-slate-900 text-white text-xs font-medium rounded-lg shadow-xl border border-emerald-500/30 animate-fade-in whitespace-nowrap">
-          Chat on WhatsApp with Hariom
+        <div className="mr-3 px-3.5 py-2 bg-slate-900 text-white text-xs font-semibold rounded-lg shadow-xl border border-emerald-500/40 animate-fade-in whitespace-nowrap">
+          Chat on WhatsApp ({PERSONAL_INFO.contact.whatsappDisplay})
         </div>
       )}
       <a
@@ -35,11 +35,11 @@ export default function WhatsAppFloat() {
         aria-label="Contact Hariom Birla on WhatsApp"
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
-        className="relative group p-4 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center cursor-pointer"
+        className="relative group p-4 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full shadow-xl hover:scale-110 transition-all duration-300 flex items-center justify-center cursor-pointer"
       >
         <span className="absolute -top-1 -right-1 flex h-3.5 w-3.5">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-400 border-2 border-slate-900"></span>
+          <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-400 border-2 border-white"></span>
         </span>
         <WhatsAppIcon className="w-6 h-6" />
       </a>

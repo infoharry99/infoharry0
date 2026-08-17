@@ -73,10 +73,10 @@ export const PERSONAL_INFO = {
   bio: 'Senior Full-Stack Developer with 5+ years of hands-on expertise engineering high-performance Laravel web applications, multi-tenant SaaS products, complex REST APIs, and modern React/Next.js frontends. Focused on clean architecture, database optimization, secure integrations, and building software that directly solves core business challenges.',
   
   contact: {
-    email: 'hariombirla.dev@gmail.com',
-    phone: '+91 98765 43210',
-    whatsapp: '919876543210', // Raw numbers for wa.me link
-    whatsappDisplay: '+91 98765 43210',
+    email: 'birlahariom11@gmail.com',
+    phone: '+91 95753 70343',
+    whatsapp: '919575370343', // Raw numbers for wa.me link
+    whatsappDisplay: '+91 95753 70343',
     linkedin: 'https://linkedin.com/in/hariombirla',
     github: 'https://github.com/hariombirla',
     twitter: 'https://twitter.com/hariombirla',

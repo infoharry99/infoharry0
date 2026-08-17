@@ -2,6 +2,20 @@
 
 @layer base {
   :root {
+    --bg-primary: #f0f7ff;
+    --bg-secondary: #e0f2fe;
+    --card-bg: #ffffff;
+    --card-border: rgba(186, 230, 253, 0.8);
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
+    --accent-blue: #0284c7;
+    --accent-violet: #6366f1;
+    --accent-cyan: #06b6d4;
+    --glow-opacity: 0.12;
+  }
+
+  .dark {
     --bg-primary: #07090e;
     --bg-secondary: #0d111a;
     --card-bg: rgba(15, 23, 42, 0.7);
@@ -13,20 +27,6 @@
     --accent-violet: #8b5cf6;
     --accent-cyan: #06b6d4;
     --glow-opacity: 0.15;
-  }
-
-  .light {
-    --bg-primary: #f8fafc;
-    --bg-secondary: #f1f5f9;
-    --card-bg: rgba(255, 255, 255, 0.85);
-    --card-border: rgba(15, 23, 42, 0.08);
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --text-muted: #64748b;
-    --accent-blue: #2563eb;
-    --accent-violet: #7c3aed;
-    --accent-cyan: #0891b2;
-    --glow-opacity: 0.06;
   }
 }
 
@@ -53,12 +53,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(100, 116, 139, 0.4);
+  background: rgba(2, 132, 199, 0.3);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.6);
+  background: rgba(2, 132, 199, 0.5);
 }
 
 /* Marquee Continuous Animation */
@@ -81,20 +81,20 @@ body {
   animation-play-state: paused;
 }
 
-/* Subtly Glowing Card Borders */
+/* Subtly Glowing Light Blue Glass Cards */
 .glass-card {
   background: var(--card-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--card-border);
   border-radius: 16px;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.08);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-card:hover {
-  border-color: rgba(59, 130, 246, 0.35);
-  box-shadow: 0 16px 40px -12px rgba(59, 130, 246, var(--glow-opacity));
+  border-color: rgba(2, 132, 199, 0.4);
+  box-shadow: 0 16px 40px -12px rgba(2, 132, 199, 0.18);
 }
 
 /* Custom Hide Scrollbar Utility for Sliders */
@@ -106,13 +106,13 @@ body {
   scrollbar-width: none;
 }
 
-/* Subtle background grid pattern */
+/* Light Blue Grid Background Pattern */
 .bg-grid-pattern {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(14, 165, 233, 0.12) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
-.light .bg-grid-pattern {
-  background-image: radial-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+.dark .bg-grid-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
   background-size: 24px 24px;
 }

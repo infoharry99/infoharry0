@@ -68,14 +68,14 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="light">
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-slate-950 text-slate-100 antialiased selection:bg-blue-600 selection:text-white">
+      <body className="bg-sky-50/50 text-slate-900 antialiased selection:bg-sky-500 selection:text-white">
         {children}
       </body>
     </html>
